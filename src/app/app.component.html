@@ -12,7 +12,7 @@
         </div>
 
     </div>
-    <div class="row">
+    <!-- <div class="row">
         <div class="col-xs-12">
             <app-success-alert></app-success-alert>
         </div>
@@ -22,6 +22,15 @@
             <app-warning-alert></app-warning-alert>
         </div>
     </div>
+    <div class="row">
+      <div class="col-xs-12">
+        <label>Username</label>
+        <input type="text" class="form-control" [(ngModel)]="username">
+        <p>{{ username }}</p>
+        <button class="btn btn-primary" [disabled]="username == ''" (click)="onAddUsername()">Add username</button>
+
+      </div>
+    </div> -->
     <div class="row">
       <div class="col-xs-12">
         <app-servers></app-servers>
