@@ -12,8 +12,8 @@ in the index.html file
 
 // decorator : enhance your component "class"
 export class ServerComponent {
-    serverId: number = 10;
-    serverStatus: string = 'offline';
+    serverId = 10;
+    serverStatus = 'offline';
     getServerStatus() {
         return this.serverStatus;
     }
