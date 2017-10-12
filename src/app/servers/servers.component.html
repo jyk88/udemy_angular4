@@ -1,7 +1,7 @@
-<!-- 
+<!--
     hints
     - because servers.component.html really only references
-    server.component.html, and this component only really looks at 
+    server.component.html, and this component only really looks at
     server.component.css, you must apply styling to
     server.component.css and reference it in styleUrl in
     server.component.ts file.
@@ -11,12 +11,23 @@
     so it's disabled until 2 seconds later
 
     - can pass in string interpolation as {{ xyz }} OR pass it in as an HTML attribute using [innerText] = "xyz"
+    $event : is a reserved variable name used for event binding
+    ->$event variable data emitted with that event
+    can be like input or click "type" of event.
 -->
 <label>Server Name</label>
-<input type="text" class="form-control" (input)="onUpdateServerName($event)">
+<!-- <input type="text" class="form-control" (input)="onUpdateServerName( $event )"> -->
+<input type="text" class="form-control" [(ngModel)]="serverName">
+
 <button class="btn btn-primary" [disabled]="!allowNewServer" (click)="onCreateServer()">
     Add Server
 </button>
 <!-- <p [innerText]="allowNewServer"></p> -->
+<!-- <p>{{ serverName }}</p> -->
 <p>{{ serverCreationStatus }}</p>
+
 <app-server></app-server>
+<label>Username</label>
+<input type="text" class="form-control" [(ngModel)]="username">
+<p>{{ username }}</p>
+<button class="btn btn-primary" [disabled]="username == ''" (click)="onAddUsername()">Add username</button>
