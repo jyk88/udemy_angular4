@@ -41,4 +41,34 @@ it's not super common but you can do it.
   <p>No server was created! :cry: </p>
 </ng-template> -->
 <p *ngIf="serverCreated">server was created! server name is {{serverName}}</p>
-<app-server></app-server>
+<app-server *ngFor='let server of servers'></app-server>
+
+<hr>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-6">
+      <label>assignment twoooo</label>
+      <button class="btn btn-primary" (click)="onButtonClick()">display deets</button>
+    </div>
+    <div class="col-xs-6">
+      <p [hidden]="clickCounter % 2 == 0">
+        super-secret-password: tuna
+      </p>
+    </div>
+  </div>
+</div>
+
+
+
+<div *ngFor="let log of logArray">
+  <p *ngIf="(clickCounter >= 5) else noColor" [ngStyle]="{backgroundColor: getBackgroundColor()}" [ngClass]="{whiteColor: clickCounter >= 5}">the button was clicked {{ clickCounter }} times</p>
+  <ng-template #noColor>
+    <p>the button was clicked {{ clickCounter }} times</p>
+  </ng-template>
+</div>
+
+
+<!-- <p
+[ngStyle]="{backgroundColor: getColor()}"
+[ngClass]="{online: serverStatus == 'online'}"
+>ServerID {{ serverId }} is currently {{ getServerStatus() }} </p> -->

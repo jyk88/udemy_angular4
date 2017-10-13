@@ -1,4 +1,9 @@
-<p>i'm in the server.component.html file!</p>
-<p>ServerID {{ serverId }} is currently {{ serverStatus }} </p>
+<!-- ngStyle is a directive used to configure CSS properties
+  but here we used getColor to get the status of the server and output different
+  color names in string format and pass it in accordingly.
+-->
 
-<p>Server status using method: {{ getServerStatus() }}</p>
+<p
+[ngStyle]="{backgroundColor: getColor()}"
+[ngClass]="{online: serverStatus == 'online'}"
+>ServerID {{ serverId }} is currently {{ getServerStatus() }} </p>

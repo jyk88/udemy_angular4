@@ -5,7 +5,13 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-servers',
   templateUrl: './servers.component.html',
-  styleUrls: ['./servers.component.css']
+  styles: [`
+
+      .whiteColor {
+      color: white;
+      }
+
+      `]
 })
 export class ServersComponent implements OnInit {
 
@@ -14,6 +20,9 @@ export class ServersComponent implements OnInit {
   serverName = '';
   username = 'testUsername';
   serverCreated = false;
+  servers = ['testServer1', 'testServer2'];
+  clickCounter = 0;
+  logArray = [];
 
   constructor() {
     setTimeout(() => {
@@ -26,6 +35,7 @@ export class ServersComponent implements OnInit {
 
   onCreateServer() {
     this.serverCreated = true;
+    this.servers.push(this.serverName);
     this.serverCreationStatus = 'server was created! server name is ' + this.serverName;
   }
 
@@ -38,4 +48,14 @@ export class ServersComponent implements OnInit {
   onAddUsername() {
     this.username = '';
   }
+
+  onButtonClick() {
+    this.clickCounter++;
+    this.logArray.push(this.clickCounter);
+  }
+
+  getBackgroundColor() {
+    return this.clickCounter >= 5 ? 'blue' : 'white';
+  }
+
 }
