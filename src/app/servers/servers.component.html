@@ -48,7 +48,7 @@ it's not super common but you can do it.
   <div class="row">
     <div class="col-xs-6">
       <label>assignment twoooo</label>
-      <button class="btn btn-primary" (click)="onButtonClick()">display deets</button>
+      <button class="btn btn-primary" (click)="log()">display deets</button>
     </div>
     <div class="col-xs-6">
       <p [hidden]="clickCounter % 2 == 0">
@@ -61,10 +61,10 @@ it's not super common but you can do it.
 
 
 <div *ngFor="let log of logArray">
-  <p *ngIf="(clickCounter >= 5) else noColor" [ngStyle]="{backgroundColor: getBackgroundColor()}" [ngClass]="{whiteColor: clickCounter >= 5}">the button was clicked {{ clickCounter }} times</p>
-  <ng-template #noColor>
-    <p>the button was clicked {{ clickCounter }} times</p>
-  </ng-template>
+  <p
+    [ngStyle]="{backgroundColor: log >= 5 ? 'blue' : 'white'}"
+    [ngClass]="{whiteColor: log >= 5}">the button was clicked {{ log }} times</p>
+
 </div>
 
 

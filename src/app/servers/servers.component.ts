@@ -49,7 +49,7 @@ export class ServersComponent implements OnInit {
     this.username = '';
   }
 
-  onButtonClick() {
+  log() {
     this.clickCounter++;
     this.logArray.push(this.clickCounter);
   }
