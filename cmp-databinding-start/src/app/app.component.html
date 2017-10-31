@@ -2,12 +2,20 @@
   <app-cockpit (serverCreated)="onServerAdded($event)" (blueprintCreated)="onBlueprintAdded($event)"></app-cockpit>
   <hr>
   <div class="row">
-    <app-server-element *ngFor="let serverElement of serverElements" [element]="serverElement">
-      <p>
-        <strong *ngIf="serverElement.type === 'server'" style="color: red">{{ serverElement.content }}</strong>
-        <em *ngIf="serverElement.type === 'blueprint'">{{ serverElement.content }}</em>
-      </p>
+    <div class="col-xs-12">
+      <!--
+      [element] is from server-element.component
+      but this is able to show up on app.component
+      because we did the @Input annotation in server-element.component.ts
+      so that it is visible to the parent (app.component)
+    -->
+      <app-server-element *ngFor="let serverElement of serverElements" [element]="serverElement">
+        <p>
+          <strong *ngIf="serverElement.type === 'server'" style="color: red">{{ serverElement.content }}</strong>
+          <em *ngIf="serverElement.type === 'blueprint'">{{ serverElement.content }}</em>
+        </p>
 
-    </app-server-element>
+      </app-server-element>
+    </div>
   </div>
 </div>

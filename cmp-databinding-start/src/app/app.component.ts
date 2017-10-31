@@ -6,10 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  serverElements = [{ type: 'server', name: 'testerver', content: 'just a test!' }];
+  serverElements = [
+    { type: 'server', name: 'testserver', content: 'just a test' }
+  ];
 
-
-  onServerAdded(serverData: { serverName: string, serverContent: string }) {
+  onServerAdded(serverData: { serverName: string; serverContent: string }) {
     this.serverElements.push({
       type: 'server',
       name: serverData.serverName,
@@ -17,11 +18,14 @@ export class AppComponent {
     });
   }
 
-  onBlueprintAdded(blueprint: { serverName: string, serverContent: string }) {
+  onBlueprintAdded(blueprintData: {
+    serverName: string;
+    serverContent: string;
+  }) {
     this.serverElements.push({
       type: 'blueprint',
-      name: blueprint.serverName,
-      content: blueprint.serverContent
+      name: blueprintData.serverName,
+      content: blueprintData.serverContent
     });
   }
 }

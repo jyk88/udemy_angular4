@@ -6,15 +6,8 @@ import { Component, OnInit, Input, ViewEncapsulation } from '@angular/core';
   styleUrls: ['./server-element.component.css']
 })
 export class ServerElementComponent implements OnInit {
-  // parent component hosting element (i.e. app.component.html) now can
-  // see the element, because it has the decorator @Input()
-  // you can pass in alias in the decorator if you want to use a different name
-  // in the parent component html.
-  @Input() element: { type: string, name: string, content: string };
+  @Input() element: { type: string; name: string; content: string };
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
 }
