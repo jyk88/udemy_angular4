@@ -3,14 +3,10 @@
   <hr>
   <div class="row">
     <div class="col-xs-12">
-      <!--
-      [element] is from server-element.component
-      but this is able to show up on app.component
-      because we did the @Input annotation in server-element.component.ts
-      so that it is visible to the parent (app.component)
-    -->
-      <app-server-element *ngFor="let serverElement of serverElements" [element]="serverElement">
-        <p>
+      <button class="btn btn-primary" (click)="onChangeFirst()">change first element</button>
+      <button class="btn btn-danger" (click)="onDestroy()">destroy first component</button>
+      <app-server-element *ngFor="let serverElement of serverElements" [element]="serverElement" [name]="serverElement.name">
+        <p #contentParagraph>
           <strong *ngIf="serverElement.type === 'server'" style="color: red">{{ serverElement.content }}</strong>
           <em *ngIf="serverElement.type === 'blueprint'">{{ serverElement.content }}</em>
         </p>
