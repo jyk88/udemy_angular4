@@ -47,7 +47,9 @@ export class ServerElementComponent
   ngOnInit() {
     console.log('ngOnInit called');
     console.log('text content: ' + this.header.nativeElement.textContent);
-    console.log('contentParagraph: ' + this.paragraph.nativeElement.textContent);
+    console.log(
+      'contentParagraph: ' + this.paragraph.nativeElement.textContent
+    );
   }
 
   ngDoCheck() {
@@ -56,8 +58,9 @@ export class ServerElementComponent
 
   ngAfterContentInit() {
     console.log('ngAfterContentInit called');
-    console.log('contentParagraph: ' + this.paragraph.nativeElement.textContent);
-
+    console.log(
+      'contentParagraph: ' + this.paragraph.nativeElement.textContent
+    );
   }
 
   ngAfterContentChecked() {
@@ -67,7 +70,6 @@ export class ServerElementComponent
   ngAfterViewInit() {
     console.log('afterviewinit called');
     console.log('text content: ' + this.header.nativeElement.textContent);
-
   }
 
   ngAfterViewChecked() {
