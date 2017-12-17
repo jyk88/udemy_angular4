@@ -1,0 +1,9 @@
+<!-- ngStyle is a directive used to configure CSS properties
+  but here we used getColor to get the status of the server and output different
+  color names in string format and pass it in accordingly.
+-->
+
+<p
+[ngStyle]="{backgroundColor: getColor()}"
+[ngClass]="{online: serverStatus == 'online'}"
+>ServerID {{ serverId }} is currently {{ getServerStatus() }} </p>
