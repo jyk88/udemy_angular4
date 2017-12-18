@@ -1,0 +1,15 @@
+<h2>
+  {{ getTitle() }}</h2>
+<ul>
+  <li *ngFor="let apple of courses">{{ apple }}</li>
+</ul>
+<img src="{{imageUrl}}" />
+<!-- <img [src]="imageUrl" /> -->
+
+<table>
+  <tr>
+    <td [attr.colSpan]="colSpan"></td>
+  </tr>
+</table>
+
+<button class="btn btn-primary"> save </button>
