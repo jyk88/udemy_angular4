@@ -18,7 +18,42 @@ export class AppComponent {
     likesCount: 10
   };
 
+  courses;
+
+  viewMode = 'dsf';
+
+  canSave = true;
+
+  task = {
+    title: 'review applications',
+    assignee: {
+      name: 'john smith'
+    }
+  };
   onFavoriteChanged(eventArgs: FavoriteChangedEventArgs) {
     console.log('fav changed to ' + eventArgs.newValue);
+  }
+
+  onAdd() {
+    this.courses.push({
+      id: 4,
+      name: 'course4'
+    });
+  }
+
+  onChange(course: { id: number; name: string }) {
+    course.name = 'updated';
+  }
+
+  loadCourses() {
+    this.courses = [
+      { id: 1, name: 'course1' },
+      { id: 2, name: 'course2' },
+      { id: 3, name: 'course3' }
+    ];
+  }
+
+  trackCourse(index, course) {
+    return course ? course.id : undefined;
   }
 }

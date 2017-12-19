@@ -1,10 +1,17 @@
 <!-- <p>toggle favorite star!</p> -->
-
+<!--
 <h2>
   <span class="glyphicon" [class.glyphicon-star]="isSelected"
     [class.glyphicon-star-empty]="!isSelected" (click)="onStarClicked()"></span>
-</h2>
+</h2> -->
 
+<!-- another way to do class based styling -->
+<h2>
+  <span class="glyphicon" (click)="onStarClicked()" [ngClass]="{
+        'glyphicon-star' : isSelected,
+        'glyphicon-star-empty': !isSelected
+      }"></span>
+</h2>
 <!--
 <input [(ngModel)]="inputText">
 <br>

@@ -13,6 +13,7 @@ import { FavoriteComponent } from './favorite/favorite.component';
 import { TitlecasePipe } from './titlecase.pipe';
 import { BootstrapPanelComponent } from './bootstrap-panel/bootstrap-panel.component';
 import { LikeComponent } from './like/like.component';
+import { InputFormatDirective } from './input-format.directive';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { LikeComponent } from './like/like.component';
     FavoriteComponent,
     TitlecasePipe,
     BootstrapPanelComponent,
-    LikeComponent
+    LikeComponent,
+    InputFormatDirective
   ],
   imports: [BrowserModule, FormsModule],
   providers: [CoursesService, AuthorService],
