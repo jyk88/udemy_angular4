@@ -11,6 +11,8 @@ import { AuthorService } from './author.service';
 import { SummaryPipe } from './summary.pipe';
 import { FavoriteComponent } from './favorite/favorite.component';
 import { TitlecasePipe } from './titlecase.pipe';
+import { BootstrapPanelComponent } from './bootstrap-panel/bootstrap-panel.component';
+import { LikeComponent } from './like/like.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { TitlecasePipe } from './titlecase.pipe';
     AuthorComponent,
     SummaryPipe,
     FavoriteComponent,
-    TitlecasePipe
+    TitlecasePipe,
+    BootstrapPanelComponent,
+    LikeComponent
   ],
   imports: [BrowserModule, FormsModule],
   providers: [CoursesService, AuthorService],

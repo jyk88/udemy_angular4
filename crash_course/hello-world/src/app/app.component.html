@@ -1,7 +1,24 @@
-<h1>Angular</h1>
+<!-- <h1>Angular</h1> -->
 
 <!-- <courses></courses> -->
 
 <!-- <app-author></app-author> -->
 
-<app-favorite></app-favorite>
+<!-- isSelected can be used here as an input value from post.isFavorite -->
+<!-- which is from app.component.ts -->
+<!-- <app-favorite [isSelected]="post.isFavorite" (change)="onFavoriteChanged($event)"></app-favorite> -->
+
+<!-- the div classes are from bootstrap-panel.component.htmls select=".className" -->
+<!-- if you don't the extra div, use ng-container (this is in conjunction with
+    ng-content in bootstrap-panel.component.html) -->
+<!-- <app-bootstrap-panel>
+
+  <ng-container class="heading">Heading</ng-container>
+  <div class="body">
+    <h2>body</h2>
+    <p>some content here</p>
+  </div>
+</app-bootstrap-panel> -->
+
+<app-like [likesCount]="tweet.likesCount" [isActive]="tweet.isLiked">
+</app-like>
